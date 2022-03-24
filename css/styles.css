@@ -754,6 +754,7 @@ a {
   margin-bottom: 12px;
 }
 .form-name {
+  display: inline-block;
   margin-bottom: 4px;
   font-weight: 400;
   font-size: 12px;
@@ -777,15 +778,16 @@ a {
 }
 .form-field {
   position: relative;
-  /* display: flex;
-  flex-direction: column; */
-  display: block;
   margin-bottom: 10px;
+}
+.modal-icon {
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .form-field:focus-within .modal-icon {
   fill: #2196f3;
 }
 .input-field {
+  display: block;
   width: 448px;
   height: 40px;
   padding-left: 42px;
@@ -795,6 +797,8 @@ a {
   border: 1px solid rgba(33, 33, 33, 0.2);
   box-sizing: border-box;
   border-radius: 4px;
+  transition: outline 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .icon-name {
   position: absolute;
@@ -834,6 +838,8 @@ a {
   border: 1px solid rgba(33, 33, 33, 0.2);
   box-sizing: border-box;
   border-radius: 4px;
+  transition: outline 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .input-field:focus,
 .form-comment:focus {
@@ -853,6 +859,28 @@ a {
 }
 textarea {
   resize: none;
+}
+.checkbox {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+.checkbox-icon {
+  display: inline-block;
+  width: 16px;
+  height: 15px;
+  border: 2px solid #000000;
+  border-radius: 2px;
+  background-image: url(../images/icon_check.svg);
+  background-size: contain;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.checkbox:checked + .checkbox-icon {
+  transform: scale(1);
+  background-color: #2196f3;
+  background-origin: border-box;
+  border-color: transparent;
 }
 .modal-submit {
   color: var(--button-order-primary-color);
@@ -878,7 +906,7 @@ textarea {
   background: #188ce8;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
-.checkbox {
+.contract {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -887,7 +915,8 @@ textarea {
 .contract-model {
   margin-top: 0;
   margin-bottom: 0;
-  margin-left: 9px;
+  margin-left: 7px;
+  margin-right: 0;
 
   font-weight: 400;
   font-size: 14px;
@@ -911,6 +940,8 @@ textarea {
   margin-top: 8px;
   margin-right: 8px;
   margin-left: auto;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .close-button:hover,
 .close-button:focus {
@@ -972,6 +1003,8 @@ textarea {
   background-color: var(--section1-footer-background-color);
   padding: 15px 0 15px 16px;
   color: #ffffff;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .form-title {
   display: flex;
